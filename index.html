@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Fixing GIS Data Discovery</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Fixing GIS Data Discovery - Introducing GeoBlacklight | A presentation at 2014 FOSS4G, Portland OR">
+		<meta name="author" content="Jack Reed">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +15,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -40,317 +41,255 @@
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Fixing GIS Data Discovery</h1>
+					<h3>Introducing GeoBlacklight</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Jack Reed / <a href="http://twitter.com/mejackreed">@mejackreed</a></small>
+					</p>
+					<p>
+						<small>Stanford University Libraries</small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
+					<h2>What is the hardest part of GIS work?</h2>
+				</section>
+				
+				<section>
+					<h2>[please don't say projections]</h2>
+				</section>
+				
+				<section>
+					<h1>Finding the data</h1>
+				</section>
+				
+				<section>
+					<blockquote>
+						One of the biggest problems for Code for America projects is getting access to the data.
+					</blockquote>
+					<br>
 					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
+						<small>@lyzidiamond | Code for America</small>
 					</p>
-
+				</section>
+				
+				<section>
+					<h2>Getting the data should be simple</h2>
+					<h3 class='fragment grow-in'>But it requires a lot of domain knowledge</h3>
+				</section>
+				
+				<section>
+					Poor user experience
+				</section>
+				
+				<section>
+					<img src='images/cds.jpg'>
+				</section>
+				
+				<section>
+					<img src='images/Hard-Drive-960px.gif'>
+				</section>
+				
+				<section>
+					<img src='images/folders.png'>
+				</section>
+				
+				<section>
+					<h2>We are all guilty</h2>
+					<img src='images/guiltydog.gif' class='no-img-effects full-width'>
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						Guilty of: not creating metadata, not preserving, not sharing it
 					</aside>
 				</section>
 
-				<!-- Example of nested vertical slides -->
+				<section>
+					<h2>We treat GIS data in an ephemeral manner</h2>
+					<h2 class="fragment grow-in">We <u>need</u> to treat them like <u>durable</u> assets</h2>
+				</section>
+				
+				<section data-transition="zoom">
+					<h3>Why should I care?</h3>
+					<h1 class="fragment roll-in">$$$</h1>
+					<h3 class="fragment fade-in">[insert altruistic open data reasons]</h3>
+					<h1 class="fragment fade-in">$$$</h1>
+				</section>
+				
+				<section>
+					<h3>I really want to just start writing code...</h3>
+				</section>
+				
+				<section>
+					<img src='images/sad.gif' class='no-img-effects full-width'>
+				</section>
+				
+				<section>
+					<h1>Design!</h1>
+				</section>
+				
+				<section>
+					<h2>Hours of user interviews</h2>
+					<h4>Students, instructors, researchers, experts, librarians, government agencies</h4>
+				</section>
+				
+				<section>
+					
+					<section>
+						<h2>Environmental scan</h2>
+					</section>
+					
+					<section>
+						<img src='images/evaluation.png' class='no-img-effects'>
+					</section>
+					
+					<section>
+						<img src='images/features.png' class='no-img-effects'>
+					</section>
+					
+				</section>
+				
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
+						<h2>Development of a metadata schema</h2>
+						<h4><a href='https://github.com/geoblacklight/geoblacklight-schema'>GeoBlacklight-Schema</a></h4>
 						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
+							Hardy, D., K. Durante. 2014. <a href='http://journal.code4lib.org/articles/9710'>A Metadata Schema for Geospatial Resource Discovery Use Cases</a>. code4lib 25.
 						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
+						<h3>Complimentary to other projects:</h3>
+						<ul>
+							<li>
+								reusing a controlled vocabulary from the FOSS4G CatInterop project
+							</li>
+							<li>
+								crosswalk from ISO 19115/19139 and FGDC (and ArcGIS)
+							</li>
+							<li>
+								conversion from OpenGeoportal Metadata
+							</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Rapid prototyping</h2>
+					<p>
+						Finally... I get to write some code
+					</p>
+					
+					<a href='http://geoblacklight.stanford.edu'>http://geoblacklight.stanford.edu</a>
+				</section>
+				
+				<section>
+					<section>
+						<img src='images/personas.png' class='no-img-effects'>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
+						<img src='images/brian.png' class='no-img-effects'>
 					</section>
 					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+						<img src='images/andrea.png' class='no-img-effects'>
 					</section>
+					<section>
+						<img src='images/sandip.png' class='no-img-effects'>
+					</section>
+					<section>
+						<img src='images/beverly.png' class='no-img-effects'>
+					</section>
+					<section>
+						<img src='images/brandon.png' class='no-img-effects'>
+					</section>
+					<section>
+						<img src='images/debra.png' class='no-img-effects'>
+					</section>
+					
 				</section>
-
+				
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
+					<img src='images/process.png' class='no-img-effects'>
 				</section>
-
+				
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+					<h2>What did we learn?</h2>
 				</section>
-
+				
 				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h2>Users are frustrated with finding data</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>
+							"When I do find it, I can't download it"
+						</li>
+						<li>
+							"Why can't I do X?"
+						</li>
+						<li>
+							"Why would I ever use X software?"
+						</li>
+						<li>
+							"Is it supposed to work like this?"
+						</li>
 					</ul>
 				</section>
+				
+				<section>
+					<h3>Current software offerings don't match institutional objectives</h3>
+				</section>
+				
+				<section>
+					<h3>Spatial search is important for spatial data</h3>
+				</section>
+				
+				<section>
+					<h2>Focus on discovery</h2>
+					<h2>Leave out analysis</h2>
+				</section>
+				
+				<section>
+					<h3>End user features</h3>
+					<img src='images/enduser.png' class='no-img-effects full-width'>
+				</section>
+				
+				<section>
+					<h3>Stakeholder features</h3>
+					<img src='images/stakeholder.png' class='no-img-effects full-width'>
+				</section>
+				
+				<section>
+					<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/mejackreed.jfl4c98b/attribution,zoompan,zoomwheel.html?access_token=pk.eyJ1IjoibWVqYWNrcmVlZCIsImEiOiJLSUo2a0pZIn0.uo-4b21vBKQ5A24_AaHFUg'></iframe>
+				</section>
+				<section>
+					<img src='images/project.png' class='no-img-effects full-width'>
+				</section>
+				
+				<section>
+					<img src='images/swstack.png' class='no-img-effects'>
+				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
+					<img src='images/sul-logo.png' class='no-img-effects'>
 					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
+						<a href='https://github.com/sul-dlss/geohydra'>GeoHydra</a> - Geospatial MetaData ToolKit for use in Hydra
 					</p>
 					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
+						<a href='https://github.com/geoblacklight/geoblacklight'>GeoBlacklight</a> - a discovery application for geospatial data [<a href='http://geoblacklight.stanford.edu'>alpha prototype</a>]
 					</p>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
 					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
+						<a href='https://github.com/geoblacklight/geomonitor'>GeoMonitor</a> - a WMS/WFS monitoring application [ <a href='http://geomonitor.stanford.edu'>just rolled out to production</a>]
 					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
 					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
+						<a href='https://github.com/geoblacklight/geoblacklight-schema'>GeoBlacklight Schema</a> - a Solr schema designed for geospatial discovery
 					</p>
 				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
+				
 				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
+					<h2>Current status:</h2>
 				</section>
-
+				
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
-					</section>
-				</section>
-
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
-
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h2>Thanks!</h2>
+					<h3>Pull requests welcome :)</h3>
 				</section>
 
 			</div>
